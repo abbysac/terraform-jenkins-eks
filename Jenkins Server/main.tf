@@ -18,7 +18,7 @@ module "vpc" {
   }
 
   public_subnet_tags = {
-    Name = "jenkins-subnet"
+    Name = "ubuntu"
   }
 }
 
@@ -65,7 +65,7 @@ module "sg" {
 module "ec2_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
-  name = "ubuntu"
+  name = "jenkins-server"
 
   instance_type               = var.instance_type
   key_name                    = "jenkins-server-key"
